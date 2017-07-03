@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>gLogs</groupId>
+		<artifactId>gLogs</artifactId>
+		<version>Alpha</version>
+	</parent>
+	<groupId>gLogs-data</groupId>
+	<artifactId>gLogs-data</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.dizitart</groupId>
+			<artifactId>nitrite</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+	</dependencies>
+</project>

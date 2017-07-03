@@ -1,4 +1,4 @@
-package org.gLogs.war.status;
+package org.gLogs.war.controller.status;
 
 import java.util.Map;
 
@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class StatusController {
-	@RequestMapping("/status")
+	@RequestMapping("/serverStatus")
     public String serverIsUp(Map<String, Object> model) {
 		model.put("message", "Server is runing ! ");
 		return "serverIsUp";
     }
-	
 }

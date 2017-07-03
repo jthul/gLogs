@@ -20,12 +20,13 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- JSTL -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
+			<groupId>gLogs-security</groupId>
+			<artifactId>gLogs-security</artifactId>
+			<version>Alpha</version>
 		</dependency>
+		
+		
 
 		<!-- Need this to compile JSP -->
 		<dependency>

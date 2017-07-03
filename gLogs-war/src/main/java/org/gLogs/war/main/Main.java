@@ -6,7 +6,13 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan("org.gLogs.war.status")
+/**
+ * This is the springboot initializer.
+ * We just call the appConfig package by using the component scan
+ * @author thulliezj
+ *
+ */
+@ComponentScan("org.gLogs.war.config")
 @SpringBootApplication
 public class Main extends SpringBootServletInitializer {
 
