@@ -1,4 +1,4 @@
-package org.gLogs.war.controller.login;
+package org.gLogs.war.controllers;
 
 import java.util.Map;
 
