@@ -21,9 +21,14 @@
 		<module>gLogs-war</module>
 		<module>gLogs-data</module>
 		<module>gLogs-security</module>
+		<module>gLogs-engine</module>
 	</modules>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>

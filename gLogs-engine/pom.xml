@@ -6,19 +6,13 @@
 		<artifactId>gLogs</artifactId>
 		<version>Alpha</version>
 	</parent>
-	<groupId>gLogs-security</groupId>
-	<artifactId>gLogs-security</artifactId>
+	<groupId>gLogs-engine</groupId>
+	<artifactId>gLogs-engine</artifactId>
 	<dependencies>
-		
-		<!-- JSTL -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
+			<groupId>gLogs-data</groupId>
+			<artifactId>gLogs-data</artifactId>
+			<version>Alpha</version>
 		</dependency>
 	</dependencies>
 </project>

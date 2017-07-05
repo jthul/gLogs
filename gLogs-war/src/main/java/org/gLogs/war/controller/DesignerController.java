@@ -1,4 +1,4 @@
-package org.gLogs.war.controllers;
+package org.gLogs.war.controller;
 
 import java.util.Map;
 
