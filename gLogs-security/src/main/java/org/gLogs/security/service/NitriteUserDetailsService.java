@@ -1,8 +1,13 @@
 package org.gLogs.security.service;
 
+import org.gLogs.data.model.UserDTO;
+import org.gLogs.data.service.UserServiceDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 /**
  * This implementation of UserDetailsService will help 
@@ -12,13 +17,20 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  *
  * created 6 juil. 2017
  */
-public class NitriteUserDetailsService implements UserDetailsService {
+@Service("nitriteUserDetailsService")
+public class NitriteUserDetailsService implements UserDetailsService{
+	
+	@Autowired
+	UserServiceDAO userServiceDAO;
 	
 	
-	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public UserDetails loadUserByUsername(String arg0) throws UsernameNotFoundException {
-		
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+		UserDTO userDTO = userServiceDAO.getUserFromUsername(userName);
+		UserDetails user = new User(userDTO.getUserName(), userDTO.getPassword(),userDTO.getRoles());
+		return user;
 	}
-
 }
