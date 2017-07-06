@@ -20,5 +20,10 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>gLogs-engine</groupId>
+			<artifactId>gLogs-engine</artifactId>
+			<version>Alpha</version>
+		</dependency>
 	</dependencies>
 </project>

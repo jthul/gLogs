@@ -1,9 +1,8 @@
 package org.gLogs.war.main;
 
 
-import javax.annotation.Resource;
-
 import org.gLogs.engine.service.LoginService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -20,7 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class Main extends SpringBootServletInitializer {
 
-	@Resource(name="loginService")
+	@Autowired
 	LoginService loginService;
 	
 	public LoginService getLoginService() {
