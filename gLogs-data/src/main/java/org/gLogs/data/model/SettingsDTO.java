@@ -9,6 +9,7 @@ import org.gLogs.data.referential.LanguageEnum;
  *
  */
 public class SettingsDTO {
+	
 	private LanguageEnum language;
 	
 
@@ -19,4 +20,5 @@ public class SettingsDTO {
 	public void setLanguage(LanguageEnum language) {
 		this.language = language;
 	}
+
 }

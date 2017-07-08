@@ -3,6 +3,7 @@ package org.gLogs.data.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.dizitart.no2.objects.Id;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
@@ -14,8 +15,11 @@ import org.springframework.security.core.GrantedAuthority;
  * @author jthulliez
  * 
  */
+
 public class UserDTO {
-	private String userName, password;
+	@Id
+	private String userName;
+	private String password;
 	private List<Role> roles;
 
 	public UserDTO() {

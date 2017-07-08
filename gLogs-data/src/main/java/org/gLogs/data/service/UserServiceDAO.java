@@ -1,5 +1,8 @@
 package org.gLogs.data.service;
 
+import java.util.List;
+
+import org.gLogs.data.exception.DataNotFoundException;
 import org.gLogs.data.model.UserDTO;
 
 /**
@@ -15,6 +18,14 @@ public interface UserServiceDAO {
 	 * <p>
 	 * @param userName the userName of the UserDTO to select
 	 * @return UserDTO or null if not found
+	 * @throws DataNotFoundException 
 	 */
-	public UserDTO getUserFromUsername(String userName);
+	public UserDTO getUserFromUsername(String userName) throws DataNotFoundException;
+	
+	/**
+	 * Will return all the users from the database
+	 * 
+	 * @return
+	 */
+	public List<UserDTO> getUsers();
 }

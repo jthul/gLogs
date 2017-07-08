@@ -2,14 +2,20 @@ package org.gLogs.engine.service.impl;
 
 import java.io.File;
 
+import org.gLogs.data.service.UserServiceDAO;
 import org.gLogs.data.utils.PersistenceUtil;
 import org.gLogs.engine.service.InitializerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("initService")
 public class InitializerServiceImpl implements InitializerService {
+	
+	@Autowired
+	private UserServiceDAO userServiceDAO;
+	
 	
 	Logger LOG = LoggerFactory.getLogger(this.getClass());
 	
@@ -29,7 +35,7 @@ public class InitializerServiceImpl implements InitializerService {
 	 * 
 	 */
 	private void initializeDatabase(){
-		
+		LOG.error("ERROR : Database is not correctly initialized.");
 	}
 	
 	/**
@@ -38,7 +44,7 @@ public class InitializerServiceImpl implements InitializerService {
 	 * @return false for coherent, true for incoherent
 	 */
 	private boolean checkDatabaseIncoherence() {
-		return false;
+		return !(userServiceDAO.getUsers().size()>0);
 	}
 	
 	/**
@@ -67,4 +73,14 @@ public class InitializerServiceImpl implements InitializerService {
 		}
 		return false;
 	}
+
+	public UserServiceDAO getUserServiceDAO() {
+		return userServiceDAO;
+	}
+
+	public void setUserServiceDAO(UserServiceDAO userServiceDAO) {
+		this.userServiceDAO = userServiceDAO;
+	}
+	
+	
 }
