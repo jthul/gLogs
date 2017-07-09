@@ -1,16 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { ListLogsComponent } from './list-logs/list-logs.component';
+import { DisplayLogContentComponent } from './display-log-content/display-log-content.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    ListLogsComponent,
+    DisplayLogContentComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ListLogsComponent,HeaderComponent,DisplayLogContentComponent]
 })
 export class AppModule { }

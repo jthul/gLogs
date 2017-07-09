@@ -1,10 +1,6 @@
 package org.gLogs.war.main;
 
 
-import javax.annotation.PostConstruct;
-
-import org.gLogs.engine.service.InitializerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -30,13 +26,4 @@ public class Main extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
 	}
-	
-	/**
-	 * This is the method called just after the 
-	 * dependencies are injected
-	 */
-	@PostConstruct
-    public void init(){
-        
-    }
 }
