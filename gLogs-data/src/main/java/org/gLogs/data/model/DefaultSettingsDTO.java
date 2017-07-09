@@ -11,7 +11,7 @@ public class DefaultSettingsDTO {
 	private UserDTO defaultUser;
 	
 	public DefaultSettingsDTO() {
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public SettingsDTO getSettings() {

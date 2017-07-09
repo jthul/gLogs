@@ -13,6 +13,10 @@ import org.gLogs.data.model.UserDTO;
  *
  */
 public interface UserServiceDAO {
+	
+	
+	public boolean checkUserExistence(String userName);
+	
 	/**
 	 * Search into the database the UserDTO corresponding to the userName
 	 * <p>
@@ -28,4 +32,11 @@ public interface UserServiceDAO {
 	 * @return
 	 */
 	public List<UserDTO> getUsers();
+	
+	
+	/**
+	 * Will add the current user into the database if it doesn't exits
+	 * @param user
+	 */
+	public void addUser(UserDTO user) ;
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.dizitart.no2.objects.Id;
-import org.springframework.security.core.GrantedAuthority;
 
 /**
  * DTO representing a user into the database.
@@ -20,10 +19,10 @@ public class UserDTO {
 	@Id
 	private String userName;
 	private String password;
-	private List<Role> roles;
+	private List<RoleDTO> roles;
 
 	public UserDTO() {
-		roles = new ArrayList<Role>();
+		roles = new ArrayList<RoleDTO>();
 	}
 
 	public String getUserName() {
@@ -43,34 +42,17 @@ public class UserDTO {
 	}
 
 	public void addRole(String role) {
-		roles.add(new Role(role));
+		roles.add(new RoleDTO(role));
 	}
 	
-	public List<Role> getRoles() {
+	public List<RoleDTO> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
+	public void setRoles(List<RoleDTO> roles) {
 		this.roles = roles;
 	}
 	
 	
-	class Role implements GrantedAuthority{
-
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		
-		String rolesString;
-		public Role(String rolesS) {
-			this.rolesString = rolesS;
-		}
-		
-		@Override
-		public String getAuthority() {
-			return rolesString;
-		}
-		
-	}
+	
 }

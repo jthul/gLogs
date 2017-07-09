@@ -2,9 +2,12 @@ package org.gLogs.engine.service.impl;
 
 import java.io.File;
 
+import org.gLogs.data.model.DefaultSettingsDTO;
 import org.gLogs.data.service.UserServiceDAO;
 import org.gLogs.data.utils.PersistenceUtil;
+import org.gLogs.engine.exception.InitException;
 import org.gLogs.engine.service.InitializerService;
+import org.gLogs.engine.utils.InitializerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +28,13 @@ public class InitializerServiceImpl implements InitializerService {
 	@Override
 	public void launchInit() {
 		boolean initDatabase = initPersistenceFolder() || checkDatabaseIncoherence();		
-		if(initDatabase) initializeDatabase();
+		if(initDatabase) {
+			try {
+				initializeDatabase();
+			} catch (InitException e) {
+				LOG.error("Error while initializing : " + e.getMessage());
+			}
+		}
 	}
 	
 	/**
@@ -34,8 +43,9 @@ public class InitializerServiceImpl implements InitializerService {
 	 * from a config file
 	 * 
 	 */
-	private void initializeDatabase(){
-		LOG.error("ERROR : Database is not correctly initialized.");
+	private void initializeDatabase() throws InitException{
+		DefaultSettingsDTO defaultSettings = InitializerUtils.getDefaultSettingsDto();
+		userServiceDAO.addUser(defaultSettings.getDefaultUser());
 	}
 	
 	/**

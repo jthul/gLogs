@@ -21,8 +21,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class Main extends SpringBootServletInitializer {
 
-	@Autowired
-	InitializerService initService;
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -39,6 +37,6 @@ public class Main extends SpringBootServletInitializer {
 	 */
 	@PostConstruct
     public void init(){
-        initService.launchInit();
+        
     }
 }

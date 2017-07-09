@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @Configuration
-@ComponentScan({"org.gLogs.data.service"})
+@ComponentScan({"org.gLogs.data.service.impl"})
 public class DataConfiguration {
 
 }
