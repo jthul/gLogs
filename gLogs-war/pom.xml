@@ -21,11 +21,6 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>gLogs-security</groupId>
-			<artifactId>gLogs-security</artifactId>
-			<version>Alpha</version>
-		</dependency>
-		<dependency>
 			<groupId>gLogs-engine</groupId>
 			<artifactId>gLogs-engine</artifactId>
 			<version>Alpha</version>

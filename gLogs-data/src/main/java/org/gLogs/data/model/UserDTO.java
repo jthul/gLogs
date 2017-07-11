@@ -25,6 +25,12 @@ public class UserDTO {
 		roles = new ArrayList<RoleDTO>();
 	}
 
+	public UserDTO(String user, String pass) {
+		roles = new ArrayList<RoleDTO>();
+		this.userName = user;
+		this.password = pass;
+	}
+	
 	public String getUserName() {
 		return userName;
 	}

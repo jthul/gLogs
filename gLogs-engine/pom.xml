@@ -10,8 +10,8 @@
 	<artifactId>gLogs-engine</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>gLogs-data</groupId>
-			<artifactId>gLogs-data</artifactId>
+			<groupId>gLogs-security</groupId>
+			<artifactId>gLogs-security</artifactId>
 			<version>Alpha</version>
 		</dependency>
 		<dependency>
