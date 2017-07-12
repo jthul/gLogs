@@ -1,5 +1,11 @@
 package org.gLogs.security.config;
-
+/**
+ * Represent the object get by the POST Login form
+ * 
+ * @author jThulliez
+ *
+ * created 12 juil. 2017
+ */
 public class AccountCredentials {
 
 	private String username;

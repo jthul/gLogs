@@ -18,6 +18,13 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Represent the filter called when trying to access to '/login' 
+ * 
+ * @author jThulliez
+ *
+ * created 12 juil. 2017
+ */
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
 	public JWTLoginFilter(String url, AuthenticationManager authManager) {
@@ -32,9 +39,9 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 			AccountCredentials creds = new ObjectMapper().readValue(req.getInputStream(), AccountCredentials.class);
 			return getAuthenticationManager().authenticate(new UsernamePasswordAuthenticationToken(creds.getUsername(),
 					creds.getPassword(), Collections.emptyList()));
+		}else{
+			throw new ServletException("Not a POST call");
 		}
-		return null;
-		
 	}
 
 	@Override

@@ -1,5 +1,12 @@
 package org.gLogs.data.exception;
 
+/**
+ * Represents exceptions thrown when data are not found in the 
+ * database
+ * @author jThulliez
+ *
+ * created 12 juil. 2017
+ */
 public class DataNotFoundException extends Exception {
 
 	/**
