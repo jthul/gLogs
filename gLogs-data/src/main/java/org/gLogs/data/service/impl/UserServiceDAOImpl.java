@@ -48,7 +48,7 @@ public class UserServiceDAOImpl implements UserServiceDAO {
 		ObjectRepository<UserDTO> repository = db.getRepository(UserDTO.class);
 		UserDTO result = repository.find(ObjectFilters.eq("userName",userName)).firstOrDefault();
 		
-		db.close();
+		//db.close();
 		
 		if(result != null ) {
 			return result;
@@ -68,7 +68,7 @@ public class UserServiceDAOImpl implements UserServiceDAO {
 		
 		ObjectRepository<UserDTO> repository = db.getRepository(UserDTO.class);
 		repository.find().forEach(c ->dtoResult.add(c) );
-		db.close();
+		//db.close();
 		
 		return dtoResult;
 	}
@@ -84,7 +84,7 @@ public class UserServiceDAOImpl implements UserServiceDAO {
 			ObjectRepository<UserDTO> repository = db.getRepository(UserDTO.class);
 			repository.insert(user);
 			db.commit();
-			db.close();
+			//db.close();
 			
 		}
 	}

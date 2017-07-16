@@ -11,10 +11,13 @@ import { RootComponent } from './root/root.component';
 import { LoginComponent } from './login/login.component';
 import { DesignerComponent } from './designer/designer.component';
 import { Error404Component } from './error404/error404.component';
+import { AuthguardComponent } from './shared/authguard/authguard.component';
+
+import {AuthenticateService} from './login/_service/authenticate.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'designer', component: DesignerComponent },
+  { path: 'designer', component: DesignerComponent, canActivate:[AuthguardComponent] },
   { path: '', redirectTo: 'login',pathMatch: 'full'},
   { path: '**', component: Error404Component }
 ];
@@ -28,7 +31,8 @@ const appRoutes: Routes = [
     RootComponent,
     LoginComponent,
     DesignerComponent,
-    Error404Component
+    Error404Component,
+    AuthguardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +42,10 @@ const appRoutes: Routes = [
           ),
           // other imports here
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpModule
   ],
-  providers: [Title],
+  providers: [Title,AuthguardComponent,AuthenticateService],
 
 })
 export class AppModule { }

@@ -11,4 +11,9 @@ public class UserController {
 	public void getInfos() {
 			
 	}
+	
+	@RequestMapping(value="/checkToken", method = RequestMethod.GET)
+	public boolean checkToken(){
+		return true;
+	}
 }
