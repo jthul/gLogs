@@ -14,6 +14,7 @@ import { Error404Component } from './error404/error404.component';
 import { AuthguardComponent } from './shared/authguard/authguard.component';
 
 import {AuthenticateService} from './login/_service/authenticate.service';
+import {UserService} from './shared/_service/user.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
         ReactiveFormsModule,
         HttpModule
   ],
-  providers: [Title,AuthguardComponent,AuthenticateService],
+  providers: [Title,AuthguardComponent,AuthenticateService,UserService],
 
 })
 export class AppModule { }

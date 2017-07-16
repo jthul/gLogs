@@ -2,11 +2,13 @@ package org.gLogs.security.config;
 
 import static java.util.Collections.emptyList;
 
+import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
@@ -36,12 +38,16 @@ class TokenAuthenticationService {
 	 * 
 	 * @param res
 	 * @param username
+	 * @throws IOException 
 	 */
-	static void addAuthentication(HttpServletResponse res, String username) {
+	static void addAuthentication(HttpServletResponse res, String username) throws IOException {
 		String JWT = Jwts.builder().setSubject(username)
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
 				.signWith(SignatureAlgorithm.HS512, SECRET).compact();
 		res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+		res.setStatus(HttpStatus.OK.value());
+		res.setContentType("text/plain");
+		res.getWriter().write("{\"Status\":\"OK\"}");
 	}
 
 	/**
