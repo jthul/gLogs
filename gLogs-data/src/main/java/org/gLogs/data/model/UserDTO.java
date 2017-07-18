@@ -18,6 +18,8 @@ import org.dizitart.no2.objects.Id;
 public class UserDTO {
 	@Id
 	private String userName;
+	private String firstName;
+	private String lastName;
 	private String password;
 	private List<RoleDTO> roles;
 
@@ -57,6 +59,22 @@ public class UserDTO {
 
 	public void setRoles(List<RoleDTO> roles) {
 		this.roles = roles;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	
