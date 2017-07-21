@@ -23,7 +23,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({"org.gLogs.war.controller", "org.gLogs.security.config", "org.gLogs.engine.config"}) // Scan for the war and other package config
+@ComponentScan({"org.gLogs.war.controller","org.gLogs.war.component", "org.gLogs.security.config", "org.gLogs.engine.config"}) // Scan for the war and other package config
 @Import({ SecurityConfiguration.class })
 public class AppConfig extends WebMvcConfigurerAdapter{
 	

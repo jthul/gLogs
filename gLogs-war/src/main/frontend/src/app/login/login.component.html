@@ -13,30 +13,31 @@
 								<p>In order to access to the designer, you need to
 									authenticate yourself. If you don't have any account, ask the
 									technical responsable</p>
-								<form name="authenticateForm" class="row noMarginBottom">
-									<div class="input-field col s6">
-										<input [(ngModel)]="username" placeholder="Login" id="first_name" type="text"
-											class="validate" name="username">
+									<form name="authenticateForm" class="row noMarginBottom" (ngSubmit)="login()" >
+										<div class="input-field col s6">
+											<input [(ngModel)]="username" placeholder="Login" id="first_name" type="text"
+											class="validate" name="username" >
+										</div>
+										<div class="input-field col s6">
+											<input [(ngModel)]="password" placeholder="Password" id="last_name" type="password"
+											class="validate" name="password" (enter)="login()">
+										</div>
+										<input type="submit" style="display:none;" />
+									</form>
+									<div class="card-action">
+										<a (click)="login()" class="hoverCursor">Connect</a>
 									</div>
-									<div class="input-field col s6">
-										<input [(ngModel)]="password" placeholder="Password" id="last_name" type="password"
-											class="validate" name="password">
-									</div>
-								</form>
-                <div class="card-action">
-        					<a (click)="login()">Connect</a>
-      					</div>
+								</div>
 							</div>
 						</div>
+
 					</div>
+					<div class="card-panel valign-wrapper red darken-3 white-text hide">Error : </div>
 
 				</div>
-        <div class="card-panel valign-wrapper red darken-3 white-text hide">Error : </div>
 
 			</div>
 
+
 		</div>
-
-
 	</div>
-</div>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -24,7 +25,8 @@ import io.jsonwebtoken.SignatureException;
  *
  * created 12 juil. 2017
  */
-class TokenAuthenticationService {
+@Service("tokenAuthenticationService")
+class TokenAuthenticationService implements TokenAuthentificationInterface{
 	static final long EXPIRATIONTIME = 600000; 
 	
 	/* Secret key, generated at startup of the server */
@@ -69,5 +71,10 @@ class TokenAuthenticationService {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public Authentication getAuthUser(HttpServletRequest request) {
+		return getAuthentication(request);
 	}
 }

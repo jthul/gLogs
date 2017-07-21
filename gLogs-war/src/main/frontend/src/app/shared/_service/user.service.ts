@@ -11,10 +11,19 @@ export class UserService {
     headers.append('authorization', auth);
     let options = new RequestOptions({ headers: headers });
     return this.http.get('/api/user/checkToken',options)
-    .map((response: Response) => 
+    .map((response: Response) =>
         data=>{return true;},
         error=>{return false;}
       );
+  }
+
+  getUserInfos(){
+    let auth = localStorage.getItem('authorization');
+    let headers = new Headers();
+    headers.append('authorization', auth);
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get('/api/user/infos',options)
+    .map((response: Response) => {return response.json();});
   }
 
 }

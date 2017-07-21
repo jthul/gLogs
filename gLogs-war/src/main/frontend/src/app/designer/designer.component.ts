@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-designer',
@@ -13,5 +14,4 @@ export class DesignerComponent implements OnInit {
   ngOnInit() {
     this.titleService.setTitle("gLogs - Designer");
   }
-
 }
