@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body{background:#29363e;}
+
+.inline{display:inline !important;}
+.inlineLi{display:inline !important;font-size: 16px;
+    color: #26a69a;  }
+
+nav .nav-wrapper{z-index:5 !important;}
+.side-nav{z-index:1 !important; padding-top:70px;}

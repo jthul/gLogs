@@ -1,24 +1,14 @@
+
 <nav>
   <div class="nav-wrapper blue-grey darken-2">
-    <form>
-      <div class="row">
-        <div class="col s2">
-          <div class="logo-content">
-            <img src="assets/_img/logo-glogs.png" class="logo"/>
-          </div>
-        </div>
-        <div class="col s7">
-          <div class="input-field">
-            <input id="search" type="search">
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-        </div>
-        <div class="col s3 right-align">
-            {{this.userInfos.firstName}} {{this.userInfos.lastName}}
-        </div>
-      </div>
-
-    </form>
+    <a href="#!" class="brand-logo" valign-wrapper><img src="assets/_img/logo-glogs.png" class="logo"/></a>
+    <ul class="right hide-on-med-and-down">
+    <li><div class="dropdown-button"  data-activates="dropdown1"> {{this.userInfos.firstName}} {{this.userInfos.lastName}}<i class="material-icons right">arrow_drop_down</i></div></li>
+    </ul>
   </div>
 </nav>
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+  <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
+  <li><a href="#!"><i class="material-icons">settings_power</i>Log out</a></li>
+</ul>
