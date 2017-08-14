@@ -3,7 +3,7 @@
   <div class="nav-wrapper blue-grey darken-2">
     <a href="#!" class="brand-logo" valign-wrapper><img src="assets/_img/logo-glogs.png" class="logo"/></a>
     <ul class="right hide-on-med-and-down">
-    <li><div class="dropdown-button"  data-activates="dropdown1"> {{this.userInfos.firstName}} {{this.userInfos.lastName}}<i class="material-icons right">arrow_drop_down</i></div></li>
+    <li><a class="dropdown-button" id="dropdownUser" data-activates="dropdown1" onclick="$('#dropdownUser').dropdown('dropdown1');$('#dropdownUser').dropdown('open');"> {{this.userInfos.firstName}} {{this.userInfos.lastName}}<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>

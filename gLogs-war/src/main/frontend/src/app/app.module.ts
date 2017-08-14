@@ -13,6 +13,7 @@ import { AuthguardComponent } from './shared/authguard/authguard.component';
 import {AuthenticateService} from './login/_service/authenticate.service';
 import {UserService} from './shared/_service/user.service';
 import { HeaderComponent } from './designer/header/header.component';
+import { SideNavComponent } from './designer/side-nav/side-nav.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     DesignerComponent,
     Error404Component,
     AuthguardComponent,
-    HeaderComponent
+    HeaderComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

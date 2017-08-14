@@ -16,5 +16,4 @@ export class HeaderComponent implements OnInit {
     console.log("test");
     this.userService.getUserInfos().subscribe((response: Response) => {this.userInfos = response;});
   }
-
 }
